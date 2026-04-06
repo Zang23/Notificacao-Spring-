@@ -122,4 +122,3 @@ src/
 * Adicionar o Thymeleaf para rodar em server-side
 
 ```
-```
