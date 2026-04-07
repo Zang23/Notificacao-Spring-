@@ -20,7 +20,7 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de mensagens/no
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/Zang_23/SistemaNotificacoes.git
+git clone https://github.com/Zang23/Notificacao-Spring-.git
 cd SistemaNotificacoes
 ```
 
