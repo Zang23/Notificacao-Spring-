@@ -1,0 +1,120 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container centralizado */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Título */
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Form adicionar nova mensagem */
+.new-message form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.new-message input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.new-message button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.new-message button:hover {
+    background-color: #357abd;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+thead {
+    background-color: #4a90e2;
+    color: white;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Formulários inline na tabela */
+.inline-form {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.inline-form input[type="text"] {
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.inline-form button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.inline-form button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+}
+
+.inline-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.inline-form .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.inline-form .delete-btn:hover {
+    background-color: #c0392b;
+}

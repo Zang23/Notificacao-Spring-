@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciamento de Mensagens</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciamento de Mensagens</h1>
+
+        <!-- Adicionar nova mensagem -->
+        <div class="new-message">
+            <form th:action="@{/mensagens}" method="POST">
+                <input name="texto" type="text" placeholder="Digite a nova mensagem" required>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+
+        <!-- Tabela de mensagens -->
+        <table>
+            <thead>
+                <tr>
+                    <th >ID</th>
+                    <th>Texto</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aqui será o loop do Thymeleaf -->
+                <tr th:each="msg : ${mensagens}">
+                    <td th:text="${msg.id}">1</td>
+                    <td th:text="${msg.texto}">Mensagem exemplo</td>
+                    <td>
+                        <form th:action="@{/mensagens/{id}(id=${msg.id})}" method="POST" class="inline-form">
+                            <input type="text" th:value="${msg.texto}" name="novoTexto" required>
+                            <button type="submit">Editar</button>
+                        </form>
+                        <form th:action="@{/mensagens/{id}/delete(id=${msg.id})}" method="post" class="inline-form">
+                            <button type="submit" class="delete-btn">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

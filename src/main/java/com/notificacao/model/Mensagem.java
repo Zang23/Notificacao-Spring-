@@ -16,6 +16,9 @@ public class Mensagem {
     private String texto;
     private boolean enviada;
 
+    public Mensagem() {
+    }
+
     public Mensagem(String texto){
         this.texto = texto;
         this.enviada = false;
