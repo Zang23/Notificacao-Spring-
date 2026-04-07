@@ -30,21 +30,12 @@ cd SistemaNotificacoes
 docker-compose up -d
 ```
 
-### 3. Configure o application.properties
+### 3 Configure a aplicacao
 
-```bash
-src/main/resources/application.properties
-```
+Copie: application-example.properties
 
-Utilize como base:
-```properties
-spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=notificacao_db
-spring.datasource.username=sa
-spring.datasource.password=SuaSenhaAqui
+Renomeie para: application.properties
 
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-```
 
 ### 4. Execute a aplicação
 
@@ -74,7 +65,7 @@ src/
  ```
 
 ### Observações
-* O banco de dados é criado automaticamente pelo Hibernate
+* O banco de dados é criado automaticamente pelo Hibernate e o Docker
 * Não é necessário criar tabelas manualmente
 * O Docker é utilizado para facilitar a configuração e execução do ambiente
 
@@ -88,6 +79,5 @@ src/
 * Criar testes automatizados
 * Versionamento de banco com Flyway
 * Integração com Angular (front-end)
-* Adicionar Thymeleaf para renderização server-side
 
 
