@@ -21,7 +21,7 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de mensagens/no
 
 ```bash
 git clone https://github.com/Zang23/Notificacao-Spring-.git
-cd SistemaNotificacoes
+cd Notificacao-Spring
 ```
 
 ### 2. Suba o banco em Docker
@@ -32,10 +32,11 @@ docker-compose up -d
 
 ### 3 Configure a aplicacao
 
+```bash
 Copie: application-example.properties
 
 Renomeie para: application.properties
-
+```
 
 ### 4. Execute a aplicação
 
