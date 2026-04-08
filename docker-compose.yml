@@ -5,7 +5,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sqlserver_notificacoes
     environment:
-      SA_PASSWORD: "YourStrong!Pass123"
+      SA_PASSWORD: "Admin@123"
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
