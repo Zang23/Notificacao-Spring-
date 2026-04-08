@@ -8,10 +8,11 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de mensagens/no
 
 - Java 21
 - Spring Boot
-- Spring Data JPA
+- Spring Data JPA (Hibernate)
 - SQL Server
-- Docker
+- Docker & Docker Compose
 - Gradle
+- Thymeleaf (para visualização simples
 
 ---
 
@@ -26,9 +27,20 @@ cd Notificacao-Spring
 
 ### 2. Suba o banco em Docker
 
-```bash
-docker-compose up -d
-```
+2.1. Rodar o container
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=SuaSenhaForte123" \
+-p 1433:1433 --name sqlserver \
+-d mcr.microsoft.com/mssql/server:2022-latest
+
+2.2 Acessar o container
+docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P SuaSenhaForte123
+
+2.3 Criar o banco de dados
+
+Dentro do SQL Server:
+
+CREATE DATABASE notificacao_db;
+GO
 
 ### 3 Configure a aplicacao
 
@@ -36,12 +48,23 @@ docker-compose up -d
 Copie: application-example.properties
 
 Renomeie para: application.properties
+
+No arquivo application.properties:
+
+spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=notificacao_db;encrypt=false;trustServerCertificate=true
+spring.datasource.username=sa
+spring.datasource.password=SuaSenhaForte123
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 ```
 
 ### 4. Execute a aplicação
 
 ```bash
 ./gradlew bootRun
+
+Acessando aplicacao: http://localhost:8080/mensagens
 ```
 ### Endpoints da API
 
