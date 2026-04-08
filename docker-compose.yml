@@ -11,6 +11,14 @@ services:
       - "1433:1433"
     volumes:
       - sql_data:/var/opt/mssql
+      - ./docker:/scripts
+    command: >
+      /bin/bash -c "
+      /opt/mssql/bin/sqlservr & 
+      sleep 20 &&
+      /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'YourStrong!Pass123' -i /scripts/init.sql &&
+      wait"
+    restart: always
 
 volumes:
   sql_data:

@@ -21,7 +21,7 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de mensagens/no
 
 ```bash
 git clone https://github.com/Zang23/Notificacao-Spring-.git
-cd SistemaNotificacoes
+cd Notificacao-Spring
 ```
 
 ### 2. Suba o banco em Docker
@@ -30,20 +30,12 @@ cd SistemaNotificacoes
 docker-compose up -d
 ```
 
-### 3. Configure o application.properties
+### 3 Configure a aplicacao
 
 ```bash
-src/main/resources/application.properties
-```
+Copie: application-example.properties
 
-Utilize como base:
-```properties
-spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=notificacao_db
-spring.datasource.username=sa
-spring.datasource.password=SuaSenhaAqui
-
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+Renomeie para: application.properties
 ```
 
 ### 4. Execute a aplicação
@@ -74,7 +66,7 @@ src/
  ```
 
 ### Observações
-* O banco de dados é criado automaticamente pelo Hibernate
+* O banco de dados é criado automaticamente pelo Hibernate e o Docker
 * Não é necessário criar tabelas manualmente
 * O Docker é utilizado para facilitar a configuração e execução do ambiente
 
@@ -88,6 +80,5 @@ src/
 * Criar testes automatizados
 * Versionamento de banco com Flyway
 * Integração com Angular (front-end)
-* Adicionar Thymeleaf para renderização server-side
 
 
