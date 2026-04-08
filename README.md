@@ -89,8 +89,8 @@ src/
  ```
 
 ### Observações
-* O banco de dados é criado automaticamente pelo Hibernate e o Docker
-* Não é necessário criar tabelas manualmente
+* O banco de dados não é criado automaticamente pelo Hibernate e o Docker
+* É necessario criar o banco de dados quando iniciar o docker
 * O Docker é utilizado para facilitar a configuração e execução do ambiente
 
 ### Decisões técnicas
